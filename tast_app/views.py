@@ -7,9 +7,9 @@ from datetime import datetime
 
 class ageAdvisorsView(APIView):
     def get(self, request, day,month,year):
-        if day > 31 :
+        if day > 31 or day < 1:
             return Response({"Please Enter correct  day with in 1 to 31 "})
-        elif month > 12:
+        elif month > 12 or month < 1:
             return Response({"Please Enter correct  month with in 1 to 12 "})
         elif  year > datetime.now().year :
             return Response({"Please Enter correct  year"})
