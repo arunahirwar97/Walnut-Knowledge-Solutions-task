@@ -11,7 +11,7 @@ class ageAdvisorsView(APIView):
             return Response({"Please Enter correct  day with in 1 to 31 "})
         elif month > 12 or month < 1:
             return Response({"Please Enter correct  month with in 1 to 12 "})
-        elif  year > datetime.now().year :
+        elif  year > datetime.now().year or  datetime.now().year <1 :
             return Response({"Please Enter correct  year"})
         else:
             currentDay = datetime.now().day
